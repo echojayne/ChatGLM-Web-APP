@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Interface</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <script>
+        async function sendText() {
+            const inputText = document.getElementById('inputText').value;
+            const userDisplay = document.getElementById('userDisplay'); // Display user text
+            const chatDisplay = document.getElementById('chatDisplay'); // Display Chat GLM response
+    
+            // Display user input on the webpage
+            userDisplay.textContent = inputText;
+
+            // Send input text to the backend API
+            const response = await fetch('/predict', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ text: inputText })
+            });
+    
+            const responseData = await response.json();
+            // Display response from Chat GLM
+            chatDisplay.textContent = responseData.response;
+        }
+    </script>
+
+    <div class="chat-container">
+        <div class="chat-header">ChatGLM3 Web App</div>
+        <div class="display-text-area"> <!-- Text display area for interaction -->
+            <div class="message user-message">
+                <img src="./user.png" alt="User Avatar" class="avatar">
+                <p id="userDisplay">用户：</p>
+            </div>
+            <div class="message chatglm-message">
+                <img src="./GLM.png" alt="Chat GLM Avatar" class="avatar">
+                <p id="chatDisplay">Chat GLM：</p>
+            </div>
+        </div>
+        <div class="self-info">
+            <div class="self-info__name">A simple ChatGLM Web APP</div>
+        </div>
+        <div class="chat-input">
+            <textarea id="inputText" placeholder="Send a message"></textarea>
+            <button onclick="sendText()">Send</button>
+        </div>         
+    </div>
+</body>
+</html>

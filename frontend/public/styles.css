@@ -1,0 +1,135 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* Set background to white */
+    /*background-image: url('background.png');  /*Ensure this points to your desired image */
+    background-size: cover;
+    background-position: center;
+}
+
+/*.response-area {
+    font-size: 20px;
+    color: #eeeeee;
+    text-align: center;
+    padding: 20px;
+    margin: auto; /* Centers the text */
+    /*width: 50%; /* Adjust based on preference */
+/*}*/
+
+.chat-header {
+    font-size: 50px; /* Size of the header text */
+    color: #3e4f87; /* Color of the header text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 20%;
+    padding: 20px;
+}
+
+.self-info {
+    font-size: 16px; /* Smaller font size */
+    color: #bbb;
+    position: fixed;
+    right: 400px; /* Position to the bottom right */
+    bottom: 100px;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 80%;
+    padding: 20px;
+    width: 100%; /* Adjust width if necessary */
+}
+
+
+.title {
+    font-size: 100px; /* Size of the title text */
+    color: #3e4f87; /* Color of the title text */
+    margin-top: 20px; /* Space above the title */
+    text-align: center; /* Centers the title text */
+    width: 90%; /* Ensures the title spans the full container width */
+}
+
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    width: 70%;
+    position: fixed;
+    bottom: 0;
+    left: 50%; /* Move the left edge to the middle */
+    transform: translateX(-48%); /* Shift it back by half its width */
+}
+
+.chat-input textarea {
+    flex: 1 1 10%; /* Allows textarea to expand but only to 50% of its container's width */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    height: 20px; /* Fixed height to match button */
+    resize: none;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    height: 40px;
+    cursor: pointer;
+}
+
+
+.display-text-area {
+    width: 70%; /* Adjust width to match your design needs */
+    height: 90%; /* Adjust height to match your design needs */
+    margin: 0 auto 20px; /* Top margin reduced to 0, center horizontally, 20px bottom margin */
+    padding: 10px; /* Increased padding for better text display */
+    background-color: #fafafa; /* Background color */
+    background-image: url('background.png'); /* Background image */
+    background-position: center; /* Center the background image */
+    background-size: contain; /* Scale the image to fit the area, may show all the image */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+    text-align: left; /* Center text */
+    font-size: 18px; /* Font size */
+    color: #333; /* Font color */
+    position: relative; /* Position relative for absolute positioning */
+    top: -50px; /* Move up by 50px */
+}
+.message {
+    display: flex; /* Flex display to align avatar and text */
+    align-items: center; /* Center items vertically */
+    margin-bottom: 10px; /* Space between messages */
+}
+
+.avatar {
+    width: 50px; /* Fixed avatar size */
+    height: 50px; /* Fixed avatar size */
+    margin-right: 10px; /* Space between avatar and text */
+    border-radius: 50%; /* Circular avatar */
+}
+.display-text-area p {
+    margin: 5px 0; /* Spacing between paragraphs */
+    padding: 5px; /* Padding inside paragraph */
+    background-color: #d1ecf1; /* Light grey background for visibility */
+    text-align: left;
+    border-radius: 5px;
+}
+
+/* Optionally, differentiate user and GLM messages visually */
+#userDisplay {
+    background-color: #d1ecf1; /* #d1ecf1; /* Light blue background for user */
+}
+
+#chatDisplay {
+    background-color: #f8d7da; /*#f8d7da; /* Light red background for Chat GLM */
+}
